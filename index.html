@@ -3,294 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SabkoJob – Every Talent Deserves an Opportunity</title>
+<title>Dakshya Jobs – Every Talent Deserves an Opportunity</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;600&display=swap">
 <style>
-:root{--ink:#14213d;--blue:#003893;--red:#c8102e;--paper:#fbfaf6;--line:#d9d6cc;--mute:#586074;color-scheme:light}
+:root{--navy:#06265f;--gold:#fbb81e;--ink:#10203f;--paper:#fafaf7;--line:#d9d6cc;--mute:#586074}
 *{box-sizing:border-box}
-body{margin:0;font:17px/1.6 "Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
-h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0 0 .5em}
-h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;max-width:14ch}
-h2{font-size:clamp(1.8rem,4vw,2.6rem)}
-p{max-width:65ch}a{color:var(--blue)}
-header{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem;padding:.8rem 5vw;border-bottom:3px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:5}
-.logo{font:800 1.5rem "Bricolage Grotesque",sans-serif;color:var(--ink);text-decoration:none}.logo b{color:var(--red)}
+body{margin:0;font:16px/1.6 "Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0 0 .5em;color:var(--navy)}
+h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;max-width:16ch}h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}
+p{max-width:68ch}a{color:var(--navy)}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;padding:.6rem 5vw;border-bottom:4px solid var(--gold);background:#fff;position:sticky;top:0;z-index:5}
+header img{height:42px;display:block}
 nav{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem}
-nav a{text-decoration:none;color:var(--ink);padding:.2rem 0;border-bottom:3px solid transparent}
-nav a:hover,nav a.on{border-color:var(--red)}
-main{padding:0 5vw 4rem}
-section{display:none;padding-top:3rem}section.on{display:block}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
-.doors a{display:block;padding:1.4rem;background:var(--ink);color:#fff;text-decoration:none;border-radius:4px 22px 4px 4px}
-.doors a:nth-child(2){background:var(--blue)}.doors a:nth-child(3){background:var(--red)}.doors a:nth-child(4){background:#fff;color:var(--ink);border:2px solid var(--ink)}
-.doors b{display:block;font:800 1.4rem "Bricolage Grotesque",sans-serif}
-.doors a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,nav a:focus-visible{outline:3px solid #f2a900;outline-offset:2px}
-.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:1.5rem}
-.svc div{border-top:4px solid var(--red);padding-top:.8rem}
-ul.tick{padding:0;list-style:none;columns:2 260px}ul.tick li{padding:.2rem 0 .2rem 1.5rem;position:relative;break-inside:avoid}
-ul.tick li:before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:700}
-.note{border-left:4px solid #f2a900;background:#fff6dc;padding:.7rem 1rem;max-width:65ch}
-table{border-collapse:collapse;width:100%;max-width:520px;margin:1rem 0}
-td,th{text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--line)}
-.wrap{overflow-x:auto}
-form{background:#fff;border:2px solid var(--ink);border-radius:4px 22px 4px 4px;padding:1.5rem;margin-top:2rem;max-width:860px}
-.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
-label,legend{font-weight:600;font-size:.92rem;display:block}
-.w{grid-column:1/-1}
-input,select,textarea{width:100%;font:inherit;padding:.55rem;margin-top:.25rem;border:1px solid #8b8f9a;border-radius:3px;background:#fff;color:var(--ink)}
-fieldset{border:1px solid var(--line);padding:.6rem .9rem;margin:0}
-fieldset label{display:inline-block;font-weight:400;margin-right:1rem}
-fieldset input,.consent input{width:auto;margin:0 .4rem 0 0}
-.consent{margin:1rem 0;font-weight:400}
-button{font:600 1rem "Public Sans",sans-serif;background:var(--red);color:#fff;border:0;padding:.8rem 1.6rem;border-radius:3px;cursor:pointer}
-button:disabled{opacity:.6}
-.msg{margin:.8rem 0 0;font-weight:600}.msg.ok{color:#0a6b2b}.msg.err{color:var(--red)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin:1.2rem 0}
-.stat{background:#fff;color:var(--ink);border:2px solid var(--ink);text-align:left;padding:.7rem;line-height:1.3}
-.stat b{display:block;font:800 1.8rem "Bricolage Grotesque",sans-serif}
-.stat.on{background:var(--ink);color:#fff}
-button.alt{background:#fff;color:var(--ink);border:2px solid var(--ink);padding:.3rem .7rem;font-size:.85rem}
-#adm table{max-width:none;font-size:.85rem}
-#adm td{white-space:nowrap;max-width:240px;overflow:hidden;text-overflow:ellipsis}
-#adm select{width:auto;margin:0;padding:.25rem}
-#lf{max-width:380px}
-footer{border-top:3px solid var(--ink);padding:1.5rem 5vw;color:var(--mute);font-size:.9rem}
+nav a{text-decoration:none;color:var(--ink);font-weight:600;padding:.2rem 0;border-bottom:3px solid transparent}
+nav a:hover,nav a.on{border-color:var(--gold)}
+main{padding:2.5rem 5vw 4rem;min-height:70vh}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1.8rem 0}
+.doors a{display:block;padding:1.3rem;background:var(--navy);color:#fff;text-decoration:none;border-radius:4px 22px 4px 4px}
+.doors a:nth-child(2){background:var(--gold);color:var(--navy)}.doors a:nth-child(4){background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.doors b{display:block;font:800 1.3rem "Bricolage Grotesque",sans-serif}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin:1rem 0}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);padding:1rem;border-radius:3px}
+.card h3{font-size:1.15rem;margin-bottom:.2em}.m{color:var(--mute);font-size:.9rem;margin:.2em 0}
+.note{border-left:4px solid var(--gold);background:#fff6dc;padding:.8rem 1rem;max-width:760px;margin:1rem 0}
+.pl{white-space:pre-line}
+form{background:#fff;border:2px solid var(--navy);border-radius:4px 20px 4px 4px;padding:1.3rem;margin:1.2rem 0;max-width:860px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem}.w{grid-column:1/-1}
+label{font-weight:600;font-size:.9rem;display:block}
+input,select,textarea{width:100%;font:inherit;padding:.5rem;margin-top:.25rem;border:1px solid #8b8f9a;border-radius:3px;background:#fff;color:var(--ink)}
+.consent{font-weight:400;margin:1rem 0}.consent input{width:auto;margin:0 .4rem 0 0}
+button{font:600 .95rem "Public Sans",sans-serif;background:var(--navy);color:#fff;border:0;padding:.65rem 1.3rem;border-radius:3px;cursor:pointer}
+button.alt{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:.3rem .8rem}
+.msg{margin:.6rem 0 0;font-weight:600}.msg.ok{color:#0a6b2b}.msg.err{color:#b3261e}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.7rem;margin:1rem 0}
+.stat{background:#fff;border:2px solid var(--navy);padding:.6rem;line-height:1.3}.stat b{display:block;font:800 1.7rem "Bricolage Grotesque",sans-serif}
+.serial{font:800 1.1rem monospace;background:var(--navy);color:var(--gold);padding:.1rem .6rem;border-radius:3px}
+.wrap{overflow-x:auto;margin:.6rem 0 1.4rem}table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}
+td,th{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--navy);color:#fff}
+td select{width:auto;margin:0;padding:.2rem}
+footer{border-top:4px solid var(--gold);padding:1.2rem 5vw;color:var(--mute);font-size:.9rem}
+#pf{display:none}
+@page{margin:14mm}
+@media print{body>*:not(#pf){display:none!important}#pf{display:block;color:#000;font:12px/1.5 Arial,sans-serif}
+#pf .ph{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--navy);padding-bottom:8px}#pf img{height:48px}
+#pf .sr{margin:12px 0;font-size:15px;border:2px solid #000;padding:6px 10px;display:inline-block}
+#pf table{font-size:12px}#pf th{background:#e8ecf5;color:#000;width:32%}#pf td,#pf th{border:1px solid #999}
+#pf ol{padding-left:18px}#pf .sg{display:flex;justify-content:space-between;margin-top:50px}#pf .sg span{border-top:1px solid #000;padding-top:4px;width:40%;text-align:center}}
 </style>
 </head>
 <body>
 <header>
-  <a class="logo" href="#home">Sabko<b>Job</b></a>
-  <nav id="nav">
-    <a href="#home">Home</a><a href="#about">About Us</a><a href="#jobs">Find Jobs</a><a href="#employers">Employers</a><a href="#training">Training</a><a href="#business">Business Support</a><a href="#contact">Contact</a><a href="#admin">Admin</a>
-  </nav>
+  <a href="#home"><img class="lg" alt="Dakshya Jobs"></a>
+  <nav id="nav"><a href="#home">Home</a><a href="#jobs">Find Jobs</a><a href="#talent">Talent</a><a href="#quick">Quick Form</a><a href="#track">Track Form</a><a href="#login" id="navd">Login / Sign up</a></nav>
 </header>
-<main>
-
-<section id="home">
-  <h1>Find the right people. Build the right future.</h1>
-  <p>SabkoJob connects employers with capable people, helps job seekers build practical skills and supports businesses in building stronger teams. Looking for a job, hiring, or starting a business? Choose where to begin.</p>
-  <div class="doors">
-    <a href="#jobs"><b>Find a Job</b>Register your profile</a>
-    <a href="#employers"><b>Hire Employees</b>Submit a hiring requirement</a>
-    <a href="#training"><b>Explore Training</b>Build job-ready skills</a>
-    <a href="#business"><b>Business Support</b>Plan, start, grow</a>
-  </div>
-  <h2>Our services</h2>
-  <div class="svc">
-    <div><h3>Recruitment &amp; Placement</h3><p>Vacancy advertising, screening, interviews and candidate assessment.</p></div>
-    <div><h3>HR Outsourcing</h3><p>Employee records, attendance, payroll administration, HR documentation and workforce support.</p></div>
-    <div><h3>Training &amp; Development</h3><p>Practical computer, communication, accounting software, customer service and job-readiness training.</p></div>
-    <div><h3>Business &amp; Entrepreneur Support</h3><p>Business planning, marketing, financial planning, operations and development consultancy.</p></div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>Who we are</h2>
-  <p>SabkoJob is a recruitment, human resource and business support company based in Janakpur, Madhesh Province, Nepal. We connect talented people with jobs, and help businesses recruit, manage and develop their workforce.</p>
-  <div class="svc">
-    <div><h3>Our mission</h3><p>To create employment opportunities, improve professional skills and help businesses grow through reliable human resource solutions.</p></div>
-    <div><h3>Our vision</h3><p>To become a trusted employment and business development partner across Nepal.</p></div>
-  </div>
-  <h3 style="margin-top:2rem">Core values</h3>
-  <ul class="tick"><li>Equal opportunity</li><li>Professional integrity</li><li>Transparency</li><li>Skill development</li><li>Employer satisfaction</li><li>Continuous improvement</li></ul>
-</section>
-
-<section id="jobs">
-  <h2>Your career starts here</h2>
-  <p>Register with SabkoJob to get suitable job opportunities, career guidance, assessments and professional development.</p>
-  <ul class="tick"><li>Candidate registration and profile</li><li>Job vacancy notifications</li><li>CV preparation</li><li>Interview preparation</li><li>Skill assessment</li><li>Career counselling</li><li>Professional training</li></ul>
-  <p class="note">Registration and job matching are free. Optional assessments and training have separate prices and need your consent. You never have to pay to receive job opportunities.</p>
-  <div data-form="Candidates"></div>
-</section>
-
-<section id="employers">
-  <h2>Build your team with the right talent</h2>
-  <p>Hiring takes time and effort. SabkoJob finds suitable candidates and manages HR activities for you.</p>
-  <ul class="tick"><li>Recruitment and shortlisting</li><li>Interview coordination</li><li>Candidate assessment</li><li>HR documentation</li><li>Payroll and attendance administration</li><li>Workforce planning</li><li>HR outsourcing</li><li>Business support</li></ul>
-  <div data-form="Employers"></div>
-</section>
-
-<section id="training">
-  <h2>Learn skills. Improve your future.</h2>
-  <p>Practical programmes that prepare you for the workplace.</p>
-  <div class="wrap"><table id="courses"><tr><th>Programme</th><th>Suggested duration</th></tr></table></div>
-  <p class="note">Fees, schedule, eligibility and certificate details are confirmed for each course when you apply.</p>
-  <div data-form="Training"></div>
-</section>
-
-<section id="business">
-  <h2>From business idea to business growth</h2>
-  <p>Practical guidance for entrepreneurs and existing businesses.</p>
-  <ul class="tick"><li>Business idea evaluation</li><li>Business plan preparation</li><li>Startup cost estimation</li><li>Marketing strategy</li><li>Accounting and financial planning</li><li>HR and employee management</li><li>Operational improvement</li><li>Investment readiness and referral support</li></ul>
-  <p class="note">SabkoJob provides consultancy and coordination. Investment or loan approval is not guaranteed.</p>
-  <div data-form="Business"></div>
-</section>
-
-<section id="contact">
-  <h2>Contact us</h2>
-  <p>SabkoJob, Janakpur, Madhesh Province, Nepal.</p>
-  <div data-form="Contact"></div>
-</section>
-
-<section id="admin">
-  <h2>Admin dashboard</h2>
-  <p class="note">Staff only. Sign in to view and manage form submissions.</p>
-  <div id="adm"></div>
-</section>
-
-</main>
-<footer>© SabkoJob. We use the details you submit only for recruitment, training and consultancy purposes.</footer>
+<main id="app"></main>
+<div id="pf"></div>
+<footer>© Dakshya Jobs, Janakpur, Madhesh Province, Nepal. Registration and job matching are free. We never ask for money in return for a job.</footer>
 
 <script>
-
-const EDU="SEE/SLC,+2 / Intermediate,Diploma,Bachelor,Master or above".split(",");
-const EXP=["No experience","Less than 1 year","1–3 years","3–5 years","5+ years"];
-// field: [label, type, options]; a trailing ? on type = optional
-const F={
-Candidates:{t:"Create your job seeker profile",b:"Submit registration details",c:"I consent to SabkoJob using my information for recruitment and relevant job notifications.",f:[
- ["Full name","text"],["Mobile number","tel"],["Email address","email?"],["Address","text"],["Date of birth","date"],["Education","select",EDU],
- ["Skills","text"],["Years of experience","select",EXP],["Last job or employer","text?"],["Preferred job","text"],["Preferred work location","text"],
- ["Expected salary (NPR)","text?"],["Available from","date?"],["CV link (Google Drive etc.)","url?"]]},
-Employers:{t:"Submit your hiring requirement",b:"Request Recruitment Service",c:"I agree that SabkoJob may contact me about this request.",f:[
- ["Company name","text"],["Contact person","text"],["Mobile number","tel"],["Email address","email"],["Company address","text"],
- ["Industry","select",["Retail","Manufacturing","Hospitality","Education","Health","Finance","Construction","Other"]],
- ["Required position","text"],["Number of employees required","number"],["Salary range (NPR)","text"],["Required qualification","text"],
- ["Experience required","select",EXP],["Expected joining date","date"],
- ["Recruitment package","select",["Candidate shortlisting","Full recruitment","Placement with assessment","HR outsourcing"]],
- ["Job description","textarea"],["Additional requirements","textarea?"]]},
-Training:{t:"Apply for training",b:"Apply for Training",c:"I consent to SabkoJob contacting me about this application.",f:[
- ["Full name","text"],["Phone number","tel"],["Email","email?"],["Address","text"],["Education","select",EDU],
- ["Selected course","select",[]],["Preferred batch","select",["Morning","Day","Evening","Weekend"]],
- ["Previous experience","textarea?"],["Training objective","textarea"]]},
-Business:{t:"Request a business consultation",b:"Request Business Consultation",c:"I agree that SabkoJob may contact me about this request.",f:[
- ["Applicant name","text"],["Business name","text?"],["Mobile number","tel"],["Business location","text"],
- ["Business type","select",["Retail","Services","Manufacturing","Agriculture","Food & hospitality","Technology","Other"]],
- ["Existing or new business","select",["New idea","Existing business"]],["Estimated investment (NPR)","number?"],["Number of employees","number?"],
- ["Required support","checks",["Business plan","Cost estimation","Marketing","Accounting & finance","HR & staffing","Operations","Investment readiness"]],
- ["Business challenges","textarea"],["Additional information","textarea?"]]},
-Contact:{t:"Send us a message",b:"Send Message",c:"I agree that SabkoJob may contact me about this message.",f:[
- ["Name","text"],["Phone","tel"],["Email","email?"],["Subject","text"],["Message","textarea"]]}
-};
-const COURSES=[["Basic Computer","15 days"],["Advanced Excel","7 days"],["Office Administration","15 days"],["Accounting Software","15 days"],["Communication Skills","5 days"],["Customer Service","5 days"],["Interview Preparation","3 days"],["HR & Payroll Basics","15 days"]];
-F.Training.f[5][2]=COURSES.map(c=>c[0]);
-document.getElementById("courses").insertAdjacentHTML("beforeend",COURSES.map(c=>`<tr><td>${c[0]}</td><td>${c[1]}</td></tr>`).join(""));
-
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
-function field([l,t,o]){
-  const opt=t.endsWith("?"),r=opt?"":" required";t=t.replace("?","");
-  const L=esc(l)+(opt?" (optional)":"");
-  if(t==="checks")return `<fieldset class="w"><legend>${L}</legend>${o.map(x=>`<label><input type="checkbox" name="${esc(l)}" value="${esc(x)}">${esc(x)}</label>`).join("")}</fieldset>`;
-  if(t==="select")return `<label>${L}<select name="${esc(l)}"${r}><option value="">Select…</option>${o.map(x=>`<option>${esc(x)}</option>`).join("")}</select></label>`;
-  if(t==="textarea")return `<label class="w">${L}<textarea name="${esc(l)}" rows="3"${r}></textarea></label>`;
-  return `<label>${L}<input type="${t}" name="${esc(l)}"${r}${t==="number"?' min="0"':""}></label>`;
-}
-document.querySelectorAll("[data-form]").forEach(el=>{
-  const k=el.dataset.form,c=F[k];
-  el.innerHTML=`<form data-k="${k}"><h3>${c.t}</h3><div class="g">${c.f.map(field).join("")}</div>
-  <label class="consent"><input type="checkbox" name="consent" required>${c.c}</label>
-  <button type="submit">${c.b}</button><p class="msg" role="status"></p></form>`;
-});
-
-// Supabase project (the publishable key is designed to be public; row-level security protects the data)
-const SB_URL="https://zgdgwsdxnizjhdohhcvn.supabase.co",SB_KEY="sb_publishable_MTbwQCTIEtWwpYk3p-FwbQ_KkCEX4l5";
-const LBL={Candidates:"Registered candidates",Employers:"Hiring requests",Training:"Training applications",Business:"Consultancy requests",Contact:"Messages"};
-const ST=["New","Contacted","In progress","Closed"],PAY=["Pending","Paid","Waived"];
-let rows=[],cur="Candidates",tok=null;
-try{tok=sessionStorage.getItem("sj_tok")}catch(x){}
-
-async function api(path,opt={}){
-  const h={apikey:SB_KEY,"Content-Type":"application/json"};
-  if(tok)h.Authorization="Bearer "+tok;
-  const r=await fetch(SB_URL+path,Object.assign({},opt,{headers:Object.assign(h,opt.headers)}));
-  if(!r.ok){const e=new Error(await r.text());e.status=r.status;throw e}
-  return r.status===204?null:r.json().catch(()=>null);
-}
-function setTok(t){tok=t;try{t?sessionStorage.setItem("sj_tok",t):sessionStorage.removeItem("sj_tok")}catch(x){}}
-
-document.addEventListener("submit",async e=>{
-  const f=e.target;
-  if(f.id==="lf"){
-    e.preventDefault();const m=f.querySelector(".msg");m.className="msg";m.textContent="Signing in…";
-    try{
-      const r=await fetch(SB_URL+"/auth/v1/token?grant_type=password",{method:"POST",headers:{apikey:SB_KEY,"Content-Type":"application/json"},body:JSON.stringify({email:f.elements.email.value,password:f.elements.password.value})});
-      const j=await r.json();if(!r.ok)throw new Error(j.error_description||j.msg||"Sign-in failed");
-      setTok(j.access_token);adm();
-    }catch(x){m.className="msg err";m.textContent=x.message}
-    return;
-  }
-  const k=f.dataset.k;if(!k)return;e.preventDefault();
-  const m=f.querySelector(".msg"),btn=f.querySelector("button"),fd=new FormData(f),data={};
-  F[k].f.forEach(([l,t])=>{data[l]=t.startsWith("checks")?fd.getAll(l).join(", "):(fd.get(l)||"")});
-  if(k==="Business"&&!data["Required support"]){m.className="msg err";m.textContent="Select at least one type of support.";return}
-  data["Consent given"]="Yes";
-  btn.disabled=true;m.className="msg";m.textContent="Sending…";
-  try{
-    const prevTok=tok;tok=null; // visitors always submit as anonymous, even if staff are signed in
-    try{await api("/rest/v1/submissions",{method:"POST",headers:{Prefer:"return=minimal"},body:JSON.stringify(Object.assign({form:k,data},k==="Training"?{payment_status:"Pending"}:{}))})}finally{tok=prevTok}
-    f.reset();m.className="msg ok";m.textContent="Thank you. We have received your details and will contact you soon.";
-  }catch(x){m.className="msg err";m.textContent="Could not send your details. Please check your internet connection and try again."}
-  btn.disabled=false;
-});
-
-const cols=()=>["Submitted",...F[cur].f.map(x=>x[0]),"Consent given","Status",...(cur==="Training"?["Payment Status"]:[])];
-const val=(r,c)=>c==="Submitted"?new Date(r.created_at).toLocaleString():c==="Status"?r.status:c==="Payment Status"?r.payment_status:(r.data[c]||"");
-async function adm(){
-  const el=document.getElementById("adm");
-  if(!tok){
-    el.innerHTML=`<form id="lf"><h3>Staff sign in</h3><label>Email<input name="email" type="email" required autocomplete="username"></label><label style="margin-top:.8rem">Password<input name="password" type="password" required autocomplete="current-password"></label><p><button type="submit">Sign in</button></p><p class="msg" role="status"></p></form>`;return;
-  }
-  el.innerHTML="<p>Loading…</p>";
-  try{rows=await api("/rest/v1/submissions?select=*&order=created_at.desc&limit=1000")}
-  catch(x){if(x.status===401||x.status===403){setTok(null);adm();return}el.innerHTML=`<p class="msg err">Could not load data: ${esc(x.message)}</p>`;return}
-  const mine=rows.filter(r=>r.form===cur),cs=cols();
-  const cell=(r,c)=>c==="Status"||c==="Payment Status"
-    ?`<td><select data-id="${r.id}" data-c="${c}">${(c==="Status"?ST:PAY).map(o=>`<option${val(r,c)===o?" selected":""}>${o}</option>`).join("")}</select></td>`
-    :`<td title="${esc(val(r,c))}">${esc(val(r,c))}</td>`;
-  el.innerHTML=`<div class="stats">${Object.keys(F).map(k=>{const n=rows.filter(r=>r.form===k),nw=n.filter(r=>r.status==="New").length;return `<button class="stat${k===cur?" on":""}" data-t="${k}"><b>${n.length}</b>${LBL[k]}${nw?` · ${nw} new`:""}</button>`}).join("")}</div>
-   <p><button id="dl">Download CSV</button> <button id="rf" class="alt">Refresh</button> <button id="lo" class="alt">Sign out</button></p>`+
-   (mine.length?`<div class="wrap"><table><tr>${cs.map(c=>`<th>${esc(c)}</th>`).join("")}<th></th></tr>${mine.map(r=>`<tr>${cs.map(c=>cell(r,c)).join("")}<td><button class="alt" data-del="${r.id}">Delete</button></td></tr>`).join("")}</table></div>`
-   :`<p>No entries in “${LBL[cur]}” yet.</p>`);
-}
-function csv(){
-  const cs=cols(),q=v=>{v=String(v==null?"":v);if(/^[=+\-@]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"'};
-  const txt="\ufeff"+[cs.map(q).join(",")].concat(rows.filter(r=>r.form===cur).map(r=>cs.map(c=>q(val(r,c))).join(","))).join("\r\n");
-  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([txt],{type:"text/csv"}));a.download="sabkojob-"+cur.toLowerCase()+".csv";a.click();
-}
-document.addEventListener("click",async e=>{
-  const t=e.target,tab=t.closest&&t.closest("[data-t]");
-  if(tab){cur=tab.dataset.t;adm();return}
-  try{
-    if(t.dataset&&"del" in t.dataset){if(confirm("Delete this entry permanently?")){await api("/rest/v1/submissions?id=eq."+encodeURIComponent(t.dataset.del),{method:"DELETE"});adm()}return}
-    if(t.id==="dl")csv();
-    if(t.id==="rf")adm();
-    if(t.id==="lo"){setTok(null);rows=[];adm()}
-  }catch(x){alert("Action failed: "+x.message)}
-});
-document.addEventListener("change",async e=>{
-  const t=e.target;if(!(t.dataset&&t.dataset.c))return;
-  try{await api("/rest/v1/submissions?id=eq."+encodeURIComponent(t.dataset.id),{method:"PATCH",headers:{Prefer:"return=minimal"},body:JSON.stringify(t.dataset.c==="Status"?{status:t.value}:{payment_status:t.value})});
-    const r=rows.find(x=>String(x.id)===t.dataset.id);if(r){t.dataset.c==="Status"?r.status=t.value:r.payment_status=t.value}
-  }catch(x){alert("Could not save change: "+x.message)}
-});
-
-function show(id){
-  const s=document.getElementById(id)||document.getElementById("home");
-  document.querySelectorAll("section").forEach(x=>x.classList.toggle("on",x===s));
-  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+s.id));
-  if(s.id==="admin")adm();
-  scrollTo(0,0);
-}
-function route(){show((location.hash||"#home").slice(1))}
-// Handle menu clicks directly so navigation works even where URL hashes are restricted (previews, iframes).
-document.addEventListener("click",e=>{
-  const a=e.target.closest&&e.target.closest('a[href^="#"]');
-  if(!a)return;
-  e.preventDefault();
-  const id=a.getAttribute("href").slice(1);
-  show(id);
-  try{history.replaceState(null,"","#"+id)}catch(x){}
-});
-addEventListener("hashchange",route);route();
-</script>
-</body>
-</html>
+const LOGO="data:image/png;base64,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
